@@ -31,7 +31,7 @@
                       <jsp:param name="username" value=""/>
                </jsp:forward>
     <% }else{%>
-     <%=username %>
+     <%=username %>你好！
     			<br> <a href="back.jsp">退出</a>
     
      <% } %>
