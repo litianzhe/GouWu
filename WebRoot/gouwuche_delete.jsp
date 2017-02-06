@@ -32,20 +32,23 @@
      <%Object key=map.get(bean);
         System.out.println("map before:"+map);
          System.out.println("key before:"+key);
-         
-     map.remove(bean);
-     System.out.println("map after:"+map); %>
-     <jsp:forward page="gouwuche.jsp" >
+         %>
+         <%if(map.get(bean)>1){%>
+         	<%map.put(bean, map.get(bean)-1); %>
+         	<%=map %>
+         	<jsp:forward page="gouwuche.jsp" >
                       <jsp:param name="" value=""/>
                </jsp:forward>
-  <%--    <%if(username==null){ %>
-     	
-         <% }else{%>
-    			<%session.invalidate(); %>
-    			<jsp:forward page="gouwuche.jsp" >
-                      <jsp:param name="username" value="<%=username %>"/>
+         <% } else{%>
+         <%
+    	 map.remove(bean);
+     		System.out.println("map after:"+map); %>
+     		 <jsp:forward page="gouwuche.jsp" >
+                      <jsp:param name="" value=""/>
                </jsp:forward>
-     <% } %> --%>
+     <%} %>
+    
+
 
 </body>
 </html>

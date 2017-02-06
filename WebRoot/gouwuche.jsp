@@ -78,28 +78,28 @@
      GouWuChe che=GouWuChe.getInstance();
      map=GouWuChe.getMap();
       %> 
-      <%
-      
-       %>
-      <% 
-      
-      map.put(commodity, num);
-      map.keySet();
-      %>
-      
-      <div class="am-g">
-		 <div class="am-u-sm-6">
+      <%if(map.get(commodity)==null){%><% 
+     	 map.put(commodity, num);
+     	 map.keySet();
+     	 %>
+      	<div class="am-g">
+		 	<div class="am-u-sm-6">
  				<%=map.keySet() %>
  				
-			</div>		
-  			</div> 
- 	<div class="am-g">
-		 <div class="am-u-sm-6">
+				</div>		
+  				</div> 
+ 		<div class="am-g">
+		 	<div class="am-u-sm-6">
  				商品：<%=map.size() %><% %>
- 				
+ 				</div>
 			</div>
-		
-			</div>
+      <%}else{%>
+      			<%num=map.get(commodity)+1;
+      			 map.put(commodity, num);
+     	 		map.keySet();
+      			 %>	
+     		<% }%>
+       
 	<%} } %>
 	 <%Map<CommodityBean,Integer> map;
      GouWuChe che=GouWuChe.getInstance();
