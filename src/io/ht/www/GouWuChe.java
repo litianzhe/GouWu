@@ -5,7 +5,7 @@ import java.util.*;
 
 
 public class GouWuChe {
-	static Map<CommodityBean,String > map=new HashMap<CommodityBean, String>();
+	static Map<CommodityBean,Integer > map=new HashMap<CommodityBean, Integer>();
 	static GouWuChe che=new GouWuChe();
 	private GouWuChe(){
 		
@@ -17,7 +17,7 @@ public class GouWuChe {
 	}
 	
 	
-	public static Map<CommodityBean, String> getMap(){
+	public static Map<CommodityBean, Integer> getMap(){
 		
 		return map;
 	}

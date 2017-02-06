@@ -19,20 +19,21 @@
         List<CommodityBean> list=comm.select();
     	CommodityBean bean=new  CommodityBean();
 		%>
-     <%String number=request.getParameter("number");
-  			//number.getClass();
+     <%String cid=request.getParameter("cid");
+     int id=Integer.parseInt(cid);
+  			bean=list.get(id-1);
       %>
       
-  <%System.out.println(number); %>
-      <%Map<CommodityBean,String> map;
+  <%System.out.println("number:"+bean); %>
+      <%Map<CommodityBean,Integer> map;
       GouWuChe che=GouWuChe.getInstance();
       map=GouWuChe.getMap();
        %>
-     <%Object key=map.get(number);
+     <%Object key=map.get(bean);
         System.out.println("map before:"+map);
-         System.out.println("key before:"+number);
+         System.out.println("key before:"+key);
          
-     map.remove(number);
+     map.remove(bean);
      System.out.println("map after:"+map); %>
      <jsp:forward page="gouwuche.jsp" >
                       <jsp:param name="" value=""/>

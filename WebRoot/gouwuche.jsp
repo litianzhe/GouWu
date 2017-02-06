@@ -25,7 +25,9 @@
 		%>
 		<%String username=(String)session.getAttribute("username");
 		 String cid=request.getParameter("cid");
-		 String number=request.getParameter("number");%>
+		 String number=request.getParameter("number");
+		 
+		 %>
 		  <%if(username==null){%>
      		<jsp:forward page="login.jsp">
                       <jsp:param name="username" value=""/>
@@ -45,8 +47,8 @@
                             <ul class="top_links fr">
                                 <li class="highlight"><a href="cmain.jsp">首页</a></li>
                                 <li><a href="userau.jsp">我的账户</a></li>
-                                <li><a href="#">购物车</a></li>
-                                <li><a href="#">注册</a></li>
+                                <li><a href="gouwuche.jsp">购物车</a></li>
+                                <li><a href="gouwuche.jsp">注册</a></li>
                                 <li><a href="mai.jsp">卖</a></li>
                                 <li ><a href="login.jsp">登录</a></li>
                             </ul>
@@ -57,36 +59,55 @@
         </div>
      </div>
 		  <%if(cid==null){
-     			
+     		
      }else{%>
-		 <%
-     //session.setAttribute("cid", cid);
+     <%if(number==null){
+     
+     
+      %>
+		 <%}else{
+     
+     int num=Integer.parseInt(number);
      int id;
      id=Integer.parseInt(cid);
       %>
      <%CommodityBean commodity=comm.selectByCommodityBean(id);
        %>
-  
-     <%Map<CommodityBean,String> map;
+  		
+     <%Map<CommodityBean,Integer> map;
      GouWuChe che=GouWuChe.getInstance();
      map=GouWuChe.getMap();
       %> 
       <%
-      map.put(commodity, number);
+      
+       %>
+      <% 
+      
+      map.put(commodity, num);
       map.keySet();
       %>
+      
       <div class="am-g">
 		 <div class="am-u-sm-6">
- 				<%=map %>
+ 				<%=map.keySet() %>
  				
 			</div>		
   			</div> 
- 
-	<% } %>
-	 <%Map<CommodityBean,String> map;
+ 	<div class="am-g">
+		 <div class="am-u-sm-6">
+ 				商品：<%=map.size() %><% %>
+ 				
+			</div>
+		
+			</div>
+	<%} } %>
+	 <%Map<CommodityBean,Integer> map;
      GouWuChe che=GouWuChe.getInstance();
      map=GouWuChe.getMap();
+     int x=1;
+    
       %>
+     商品：<%=map.size() %>
         <%for(CommodityBean key:map.keySet()){ %>
        
 		 <div class="am-g">
@@ -101,7 +122,7 @@
 			</div>
 			<div class="am-u-sm-3">
  				
- 				<a href="gouwuche_delete.jsp?number=<%=key %>">删除</a>
+ 				<a href="gouwuche_delete.jsp?cid=<%=key.getCid() %>">删除</a>
  				
 			</div>
 			</div>

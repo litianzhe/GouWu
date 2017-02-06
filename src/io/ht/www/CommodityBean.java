@@ -72,6 +72,43 @@ public class CommodityBean {
 		this.cquality = cquality;
 		this.cimage = cimage;
 	}
+	@Override
+	public int hashCode() {
+		return cid;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CommodityBean other = (CommodityBean) obj;
+		if (cid != other.cid)
+			return false;
+		if (cimage == null) {
+			if (other.cimage != null)
+				return false;
+		} else if (!cimage.equals(other.cimage))
+			return false;
+		if (cname == null) {
+			if (other.cname != null)
+				return false;
+		} else if (!cname.equals(other.cname))
+			return false;
+		if (Float.floatToIntBits(cnumber) != Float
+				.floatToIntBits(other.cnumber))
+			return false;
+		if (Float.floatToIntBits(cprice) != Float.floatToIntBits(other.cprice))
+			return false;
+		if (cquality == null) {
+			if (other.cquality != null)
+				return false;
+		} else if (!cquality.equals(other.cquality))
+			return false;
+		return true;
+	}
 	
 	
 
