@@ -42,6 +42,8 @@
                                 <li><a href="#">注册</a></li>
                                 <li><a href="mai.jsp">卖</a></li>
                                 <li ><a href="login.jsp">登录</a></li>
+                                <%//if(!=){} %>
+                                
                             </ul>
                             <!--头部小导航结束-->
                             <!-- logo -->  
