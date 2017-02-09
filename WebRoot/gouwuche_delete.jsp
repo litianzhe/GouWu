@@ -40,6 +40,7 @@
                       <jsp:param name="" value=""/>
                </jsp:forward>
          <% } else{%>
+         
          <%
     	 map.remove(bean);
      		System.out.println("map after:"+map); %>
