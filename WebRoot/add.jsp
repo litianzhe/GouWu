@@ -45,7 +45,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		用户名<input type="text" name="username">
 		<br>
     
-  <!--   <input type="submit"value="提交" /> -->
      <p><button type="submit" class="am-btn am-btn-default">提交</button></p>
     </fieldset>
     

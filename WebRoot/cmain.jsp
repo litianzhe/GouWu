@@ -40,7 +40,7 @@
                                 <li><a href="userau.jsp">我的账户</a></li>
                                 <li><a href="gouwuche.jsp">购物车</a></li>
                                 <li><a href="#">注册</a></li>
-                                <li><a href="mai.jsp">卖</a></li>
+                                <li><a href="mai.jsp">添加商品</a></li>
                                 <li ><a href="login.jsp">登录</a></li>
                                 <%//if(!=){} %>
                                 

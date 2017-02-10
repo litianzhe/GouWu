@@ -51,22 +51,21 @@
              </div> 
         </div>
      </div> 
-      <form action="cmain.jsp" method="post" class="am-form">
+      <form action="shopadd.jsp" method="post" class="am-form">
      <fieldset>
-		商品名<input type="text" name="name" value="用户"><br>
+		商品名<input type="text" name="cname" value="商品名"><br>
 		<br>
-		价格<input type="text" name="sex" value="1">
+		价格<input type="text" name="cprice" value="1">
 		<br>
-		数量<input type="text" name="name" value="用户"><br>
+		数量<input type="text" name="cnumber" value="数量"><br>
 		生产日期
-			<input id="birthday" type="text" class="am-form-field" placeholder="日历组件"
-				 data-am-datepicker readonly required name="brithday" >	
+			<input id="cquality" type="text" class="am-form-field" placeholder="日历组件"
+				 data-am-datepicker readonly required name="cquality" >	
 		
 	<br>
-		图片地址<input type="image" name="username">
+		图片地址<input type="text" name="cimage">
 		<br>
-    
-  <!--   <input type="submit"value="提交" /> -->
+ 
      <p><button type="submit" class="am-btn am-btn-default">提交</button></p>
     </fieldset>
     

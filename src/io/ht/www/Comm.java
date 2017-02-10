@@ -32,17 +32,18 @@ public class Comm {
 	}
 	Connection conn=null;
 	//增加
-	public int insert(String cname,float cprice,float cnumber,String cquality ) {
+	public int insert(String cname,float cprice,float cnumber,String cquality ,String cimage) {
 		PreparedStatement ps=null;
 		int i=0;
 		conn=UJdbc.getCon();
-		String sql="INSERT INTO commodity(cname,cprice,cnumber,cquality) VALUES (?,?,?,?);";
+		String sql="INSERT INTO commodity(cname,cprice,cnumber,cquality,cimage) VALUES (?,?,?,?,?);";
 		try {
 			 ps=conn.prepareStatement(sql);
 			 ps.setString(1, cname);
 			 ps.setFloat(2, cprice);
 			 ps.setFloat(3, cnumber);
 			 ps.setString(4, cquality);
+			 ps.setString(5, cimage);
 			 System.out.println("wd :");
 			 ps.executeUpdate();
 			 
